@@ -22,18 +22,7 @@ gambarin api_key=<your_api_key>
 ```
 
 3. Done :)
-
-
-## Result
-
-There is some result from that command:
-
-![alt image1](./img/img1.png)
-
-![alt image2](./img/img2.png)
-
-
-    
+   
 ## Usage
 
 You can directly generate an image from your CLI! :)
@@ -43,4 +32,13 @@ gambarin p="a cat with sun power in anime style"
 ```
 
 ***Note*** : make sure you use quotation marks after `p=` as usage example so it's detected as one line prompt.
+
+## Result
+
+There is some result from that command:
+
+![alt image1](./img/img1.jpg)
+
+![alt image2](./img/img2.jpg)
+
 
