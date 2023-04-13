@@ -8,7 +8,7 @@ Gambarin is a powerful and user-friendly ChatGPT image generation tool that allo
 Install the project with npm
 
 ```bash
-  npm i gambarin -g
+npm i gambarin -g
 ```
 
 ## Setup
