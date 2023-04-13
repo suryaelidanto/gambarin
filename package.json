@@ -1,6 +1,6 @@
 {
   "name": "gambarin",
-  "version": "1.0.1",
+  "version": "1.0.4",
   "description": "",
   "main": "index.js",
   "scripts": {
@@ -9,6 +9,7 @@
   "bin": {
     "gambarin": "bin/index.js"
   },
+  "homepage": "https://github.com/suryaa6666/gambarin#readme",
   "keywords": [],
   "author": "",
   "license": "ISC",
