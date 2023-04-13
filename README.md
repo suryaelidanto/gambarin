@@ -24,6 +24,15 @@ gambarin api_key=<your_api_key>
 3. Done :)
 
 
+## Result
+
+There is some result from that command:
+
+![alt image1](./img/img1.png)
+
+![alt image2](./img/img2.png)
+
+
     
 ## Usage
 
