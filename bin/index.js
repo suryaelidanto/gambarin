@@ -1,6 +1,7 @@
 #!/usr/bin/env node
-const axios = require('axios')
-const fs = require('fs')
+import axios from 'axios'
+import fs from 'fs'
+import open from 'open'
 
 const getCommand = process.argv.slice(2)
 
@@ -29,18 +30,19 @@ if (api_key) {
             const body = {
                 prompt: process.argv.slice(2)[0],
                 n: 1,
-                size: "1024x1024"
+                size: "512x512"
             }
             const response = await axios.post(`https://api.openai.com/v1/images/generations`, body, {
                 headers: {
                     Authorization: `Bearer ${get_api_key}`
                 },
             })
-            console.log("✍️  Created By : SuryaElz")
-            console.log("😇 Follow Me  : https://github.com/suryaa6666")
-            console.log("🙌 Your image : ", response.data.data[0].url)
+            console.log("==> Created By : SuryaElz")
+            console.log("==> Follow Me : https://github.com/suryaa6666")
+            console.log("==> Your image : ", response.data.data[0].url)
+            open(response.data.data[0].url)
         } catch (err) {
-            console.log(`There is an when generating image : ${err.message}`)
+            console.log(`There is an error when generating image : ${err.message}`)
         }
     }
 
