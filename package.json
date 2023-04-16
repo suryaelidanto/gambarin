@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "npx webpack && node bin/bundle.js"
+    "start": "npx webpack && node bin/bundle.js",
+    "build": "npx webpack"
   },
   "bin": {
     "gambarin": "bin/bundle.js"

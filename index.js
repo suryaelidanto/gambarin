@@ -1,25 +1,7 @@
-#!/usr/bin/env node
 const axios = require('axios')
 const fs = require('fs')
 const open = require('open')
 const commander = require('commander')
-
-const getCommand = process.argv.slice(2)
-
-let api_key = ""
-let p = false
-let n = false
-
-getCommand.forEach((item) => {
-    const check = item.split('=')
-    if (check.includes("api_key")) {
-        api_key = check[1]
-    } else if (check.includes("p")) {
-        p = true
-    } else if (check.includes("n")) {
-        n = true
-    }
-})
 
 commander
     .option('-a, --api_key <api_key>', 'Set API key')
@@ -27,12 +9,14 @@ commander
     .option('-n, --n <n>', 'Number of images to generate', parseInt)
     .parse(process.argv);
 
-console.log("commander", commander, "testing")
+const { api_key, prompt, n } = commander
+
+console.log(api_key, prompt, n);
 
 if (api_key) {
     fs.writeFileSync('api_key.txt', api_key)
     console.log('API key saved successfully!');
-} else if (p) {
+} else if (prompt) {
     async function generateImage() {
         if (!fs.existsSync('api_key.txt')) {
             return console.log('Please set your API key first!')
@@ -40,7 +24,7 @@ if (api_key) {
         const get_api_key = fs.readFileSync('api_key.txt', 'utf-8')
         try {
             const body = {
-                prompt: process.argv.slice(2)[0],
+                prompt: prompt.join(' '),
                 n: n ? n : 1,
                 size: "512x512"
             }
@@ -64,4 +48,3 @@ if (api_key) {
 } else {
     console.log('Please provide a correct command!')
 }
-
